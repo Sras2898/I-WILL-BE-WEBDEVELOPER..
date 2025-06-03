@@ -1,22 +1,38 @@
-constbutton = document.getElementById('search-button');
-const input = document.getElementById('city-input');
+let currentplayer = "X";
+let arr = Array(9).fill(null);
 
-const cityName = document.getElementById('city-name');
-const cityTime = document.getElementById('city-time');
-const cityTemp = document.getElementById('city-temp');
 
-async function getData(cityName)   {
-        const promise = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=1b8a10ef3788661163ac6c50013c6ca
-&q=${cityName}`
+function checkWinner() {
+    if (
+        (arr[0] !== null&& arr[0]  && arr[1] == arr[1]) ||
+        (arr[3] !== null&& arr[4]  && arr[4] == arr[5]) ||
+        (arr[6] !== null&& arr[7]  && arr[7] == arr[8]) ||
+        (arr[0] !== null&& arr[3]  && arr[3] == arr[6]) ||
+        (arr[1] !== null&& arr[4]  && arr[4] == arr[7]) ||
+        (arr[2] !== null&& arr[5]  && arr[5] == arr[8]) ||
+        (arr[0] !== null&& arr[4]  && arr[4] == arr[8]) ||
+        (arr[2] !== null&& arr[4]  && arr[4] == arr[6]) 
+        {
+            document.Write(`winner is ${currentplayer}`);
+                return;
+        } 
+        arr.(!arr.some(e => e === null) ){
+         document.write("It's a draw!");
+            return;
+        }
+     }
+            
+        
 
-       ) ;
-        return await promise.json();
+
+function handleclick(el)  {
+    if(arr[id] !== null) {
+        return; // Cell already filled
+
+    const id = Number(el.id);
+    array[id] = currentplayer;
+    el.innerText = currentplayer; 
+    checkWinner();  
+    currentplayer = currentplayer === "X" ? "O" : "X";
+
 }
-button.addEventListener('click', async () => {
-    const value = input.value;
-    getData result = await getData(value);
-    cityName.innerText = `${result.location.name}, ${result.location.region} - ${result.location.country}`;
-    cityTime.innerText = result.location.localtime;
-    cityTemp.innerText = result.current.temp_c;
-}); 
