@@ -1,0 +1,45 @@
+container {
+           text-align: center;
+           margin-top: 10px;
+           background: #727472;
+           border: 4px solid green;
+           padding: 10px;
+ }
+ table{
+          margin: auto;
+          background: rgb(7, 208, 226);
+          display: flex;
+          border: 10px;
+          align-items: center;
+          justify-content:  center;   
+           }
+
+ button{
+      border-radius: 50px;
+      font-size: 40px;
+      background: rgb(233, 6, 93);
+      width: 88px;
+      height: 105px;
+ }
+  
+ 
+ .calculator{
+          background: #668bc3;
+          padding: 1px;
+          border-radius: 1px;
+          border: 4px solid green;
+          
+ }
+
+ input{
+      border-radius: 4px;
+      background: #03399e00;
+      border: 10px solid #0e0b09;
+      font-size: 60px;;
+    
+ }
+
+  form .display{
+        display: flex ;
+
+  }
